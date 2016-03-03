@@ -57,7 +57,7 @@ end
 
 remote_file nginx_url do
   source   nginx_url
-  checksum node['nginx']['source']['checksum']
+  # checksum node['nginx']['source']['checksum']
   path     src_filepath
   backup   false
 end
