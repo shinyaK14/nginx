@@ -45,7 +45,9 @@ elsif node['nginx']['passenger']['install_method'] == 'source'
   # node.run_state['nginx_configure_flags'] =
   #   node.run_state['nginx_configure_flags'] | ["--add-module=#{node['nginx']['passenger']['root']}/ext/nginx"]
 
-  nginx_addon_dir = `passenger-config about nginx-addon-dir`
+  # nginx_addon_dir = `passenger-config about nginx-addon-dir`
+
+  nginx_addon_dir = "/usr/local/rvm/gems/ruby-2.1.9/gems/passenger-5.0.26/src/nginx_module/"
 
   node.run_state['nginx_configure_flags'] =
     node.run_state['nginx_configure_flags'] | ["--add-module=#{nginx_addon_dir}"]
